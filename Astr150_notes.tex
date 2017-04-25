@@ -1,0 +1,502 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}  % graphics 
+\usepackage{gensymb}  % degree symbol 
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\usepackage{url}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Washington, Astronomy Department} \\ [25pt] 
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Astr150 Spring 2015 : section notes \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Chris Suberlak} 
+\date{\normalsize\today} 
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	1 : Gravity 
+%----------------------------------------------------------------------------------------
+
+\section{Gravity Problems }
+
+The notion of gravity links very closely to the concepts discussed in the lectures : mass , density, or composition. 
+As Newton showed few hundred years ago, we can write the force of attraction between two masses as: 
+
+\begin{equation}
+ F_{grav} = \frac{G M m}{r^{2}}
+ \label{eq:gravity}
+\end{equation}
+
+Where $F_{grav}$ stands for the force of gravitational attraction, $G$ the gravitational constant ($G = 6.67 \cdot 10^{-8} [cm^{3}g^{-1}s^{-2}]$), $M$ and $m$ - considered masses, and $r$ - separation between the masses. 
+
+We also have Newton's second law  : that any force is proportional to mass. In other words: 
+
+\begin{equation}
+F \propto m
+\end{equation}
+
+and the constant of proportionality is acceleration \textbf{a} : 
+
+\begin{equation}
+\label{newtons}
+F = m \, \bold{a}
+\end{equation}
+
+Gravitational attraction occurs between any two bodies that have mass - thus, as much as the Earth attracts you, you also attract the Earth (if you did not, the force implies acceleration, and we ought to plunge downwards with some acceleration! Fortunately we can stay on the surface thanks to the structural forces that hold the matter together - electrostatic force - that provide the solidity of your body and feet, so that you can stand firm on the surface. The same applies to a rock, and anything else that is on the surface. That's also why ancient philosopher Aristotle claimed that the natural state of sublunar matter is rest). 
+
+One may ask - what is the distance between me and the Earth:  if I am standing on the surface, isn't it 0 ? 
+This is answered by \textbf{Gauss's theorem}, from a German mathematician Carl Friedrich Gauss (it's one of his many theorems). This theorem states that the \textbf{gravitational attraction between the two bodies is the same as if all the mass for each body was concentrated in one point}. This means that we are attracted by the Earth in the same fashion as if all the mass of the Earth was exactly in its geometrical center (in something like a small black hole),  and we were separated from it by the Earth's radius : 6478 km . Same goes for the gravitational attraction between the Moon and the Earth - where the distance between the center of the Earth and center of the Moon is roughly 364000 km. 
+
+Therefore $r$ in Eq.~\ref{eq:gravity}, means in some cases the radius of a considered planet, and sometimes the distance between a planet and a moon, or a planet and a star. 
+
+
+
+In case of gravitational acceleration on the surface of a planet or star, we call the constant of acceleration from Eq.~\ref{newtons} $g$  - the specific gravity. 
+
+Thus 
+
+\begin{equation}
+g = \frac{F}{m} = \frac{G M m}{r^{2}} \frac{1}{m} = \frac{GM}{r^{2}}
+\end{equation}
+
+and this expression will be the  most useful one for the course :
+
+\begin{equation}
+g = \frac{GM}{r^{2}}
+\end{equation}
+
+
+For Earth, 
+
+\begin{equation}
+g_{E} = \frac{GM_{E}}{r_{E}^{2}} = 9.81 [m s^{-2}]
+\end{equation}
+
+For any other planet, we can calculate $g$ given the mass and radius of the planet: 
+
+\begin{equation}
+g_{planet} = \frac{GM_{planet}}{r_{planet}^{2}}
+\end{equation}
+
+
+
+
+
+We can see that $g$ is directly proportional to mass, and inversely proportional to the square of the radius. This means that if we increase the mass of the planet 2 times keeping radius constant, $g$ increases 2 times - this corresponds to adding mass to the planet. However, if we increase the radius of the planet 2 times keeping mass constant,   $g$ decreases by a factor of 4. 
+
+Therefore, as long as $r_{planet}$ and $M_{planet}$ are expressed as multiples of $r_{E}$ and $M_{E}$, we can compare the $g_{planet}$ to $g_{E}$.
+\newline
+
+Eg. if $r_{planet} = 2 r_{E}$ and  $M_{planet} = 2 M_{E}$, we find:
+
+
+
+\begin{equation}
+g_{planet} = \frac{GM_{planet}}{r_{planet}^{2}} = \frac{G \, 2 M_{E}}{(2 r_{E})^{2}} = \frac{G M_{E}}{2 r_{E}^{2}}= \frac{1}{2} g_{E}
+\end{equation}
+
+\newpage
+
+
+
+%----------------------------------------------------------------------------------------
+%	2 : Lunar Mapping
+%----------------------------------------------------------------------------------------
+
+
+\section{Lunar Mapping }
+
+We can gain a plethora of information from studying an image of a surface. In this Exercise we study pictures of the Moon, taken by the Lunar Orbiter in the 1960s. Those images were employed for instance by the NASA scientists to determine best places for landing on the Moon. 
+
+Several concepts are relevant to understand the  lunar surface.  Firstly,  layers that are on the top are younger than the ones that are on the bottom - the principle of stratification.  Processes involved in shaping the lunar surface include lava flows,  meteoritic impacts, and orogeny.  Lava flows do not need to happen at the same time - they may flow one on top of the other, filling old craters, creating lava rivers,  lava tubes, and on the grand scale  - lunar mare regions.  Meteoritic impacts also do not happen all at once - a lot of bombardment happened in the Late Heavy Bombardment, but there are impacts ever since, even now the Moon is occasionally hit by a meteorite - a treat for amateur  astronomers seeing a sudden flash on the lunar surface!   Orogeny includes all processes that shaped the surface through the engagement of the tectonic  forces, even if they were present on a given body only temporarily (i.e. mountains are not formed any more on the Moon nor on Mars, but they were in the past, when these bodies were hotter and exhibited more geologic activity). 
+
+
+The stratified composition gets further disturbed by the meteoritic impacts - the material is ejected outwards, the deepest layer ejected comes from a depth equal to one tenth of the crater diameter.  Deepest layers are also deposited closest to the rim of the crater.  This means that the bigger the crater, the deeper the layers probed, especially those deposited about its rim. Sometimes the ejecta plows into surface, forming odd-shaped craters and trenches (which look similar to lava tubes, but we can distinguish them by remembering that the debris from impact would be deposited radially about the crater). 
+
+Craters  can be further modified : filled with lava, forming in turn ghost craters (see Fig.~\ref{fig:GhostCrater}).  Then there can be many more impacts on the surface of lava, which implies the causality - seeing the ghost crater with some impacts on the top, we know that first there must have been a bigger impact creating the crater, which was then filled with lava, and eventually pockmarked by some smaller impacts. It may be even overlapping with some other later impact. 
+
+Lava flows create, apart from mare and rather flat, uniform surface, two interesting formations : sinuous rilles, and lava tubes. Sinuous rilles are lava rivers, concave structures that indicate a flow of lava (Fig. ~\ref{fig:SinuousRille}).  Lava tubes (see Fig.~\ref{fig:LavaTubes}) are channels of underground flow of lava, which collapse because the top cools faster than the bottom. 
+
+
+\begin{figure*}
+\centering
+	\includegraphics{Figs/sec_2_lava_tube}
+	\caption[LavaTubes]{Lava tubes on the Moon}
+	\label{fig:LavaTubes}
+\end{figure*}
+
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_2_sinuous_rille.pdf}
+	\caption[SinuousRille]{Sinuous Rilles on the Moon}
+	\label{fig:SinuousRille}
+\end{figure*}
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_2_ghost_crater.pdf}
+	\caption[GhostCrater]{Ghost craters on the Moon}
+	\label{fig:GhostCrater}
+\end{figure*}
+
+Two tectonic processes can further modify the surface  : stretching (extension) and compression.  Stretching produces straight (linear) rilles - note that the name is similar to sinuous rilles, but the origin is completely different! (see Fig.~\ref{fig:StraightRille} ). Compression produces wrinkle ridges (Fig.~\ref{fig:Wrinkles}). 
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_2_straight_rille.pdf}
+	\caption[StraightRille]{Straight rilles on the Moon}
+	\label{fig:StraightRille}
+\end{figure*}
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_2_wrinkle_ridges.pdf}
+	\caption[Wrinkles]{Wrinkle ridges on the Moon}
+	\label{fig:Wrinkles}
+\end{figure*}
+
+
+\newpage 
+
+%----------------------------------------------------------------------------------------
+%	3 :  Crater Counting
+%----------------------------------------------------------------------------------------
+
+
+\section{Crater Counting }
+
+From lunar mapping exercise we see that a surface of a celestial body can convey a lot of useful
+information about its past, unless modified by surface processes. Erosion and weathering
+removed much of the cratering record from the surface of the Earth. Moon however does not
+have an atmosphere, which meant that most of the impacts are left intact, and thus we can
+decompose its history by looking at crater count. If we assume that meteors hit bodies in the
+solar system uniformly in time , i.e. at roughly the same rate now as 100 mln years ago or
+1.5 bln years ago, the more craters there are, the older the body is. This makes sense thinking
+for instance about the analogy of a surface constantly undergoing bombing - if bombs
+are dropped at a constant rate, a surface with more bomb-craters would be older. This is the
+premise of this exercise, that employs crater counting as a measure of age. Even if there is
+some atmosphere, as in the case of Mars, there is no preferred location to be affected more
+by the presence of the atmosphere on the entire planet, so that wherever the meteor falls on
+Mars, if it is too small it will burn in the atmosphere, just like in the case of Earth. Dust devils,
+and other phenomena of the interaction of atmosphere with the surface on Mars have a
+negligible weathering effect on larger craters, certainly insignificant for craters with diameter
+bigger than few km.
+
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_3_giordano_bruno.pdf}
+	\caption[cum density]{Cumulative crater density plot. Crater density plot is used to determine the age of
+a given surface. From T. Morota et al. 'Formation age of the lunar crater Giordano
+Bruno '  Meteoritics and Planetary Science 44, Nr 8, 1115-1120 (2009). Also see
+\url{http://www.psrd.hawaii.edu/Feb10/GiordanoBrunoCrater.html}}
+	\label{fig:cum_density}
+\end{figure*} 
+
+Since craters come in a variety of sizes, it is reasonable to count their number from some
+threshold crater diameter to be consistent with our estimate. \textbf{Cumulative Crater Density} is
+the number of craters $N$ larger than a certain diameter $D$ km, denoted as $N(D)$. The most
+often employed threshold is $D = 10$ km , so that by $N(10)$ we mean the number of craters
+with a diameter bigger than $10$ km.
+
+
+On a young surface, such as that which has undergone some volcanic activity, the crater count
+age is reset - from the moment a surface was covered by the lava, it is plain, and we call this
+surface a young surface. As time goes by it will be hit by more and more meteorites, creating
+more and more craters, so that the crater counting will give us the age from the moment of
+the most recent volcanic activity. Thus even though all locations on the surface of the planet
+(such as Mars) are being hit at constant rate (eg. one 10 km crater per 1000 years), some of
+them were reset by geologic or tectonic activity. Even though Mars is not geologically active
+now, it used to have some activity, which is witnessed by the presence of some of the largest
+extinct volcanoes in the Solar System , with Olympus Mons, the tallest one (27 km above the
+surrounding terrain). See \url{http://mars.jpl.nasa.gov/gallery/atlas/olympus-mons.html}  and \url{http://hyperphysics.phy-astr.gsu.edu/hbase/solar/marsoly.html}  for more stunning images of this grand volcano. Mt Rainier seems really puny compared to this 88000 ft monster (yes,  4 times the height of Mt Rainier! ). 
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_3_impact_frequency.pdf}
+	\caption[impact rate]{The frequency of impacts depends on the size of the impactor. Larger meteors hit
+more rarely than the smaller ones.}
+	\label{fig:impact_rate}
+\end{figure*}  
+
+
+
+
+The way the surface looks changes not only with regards to the number of craters bigger than
+10 km, but also with regards to their distribution. The older the surface, the more big craters
+there is, because big impacts happen much more rarely than small impacts. On Fig.~\ref{fig:cum_density} we
+can see that different regions of the Moon have different crater populations, and the older the
+region the more craters it has. The type of craters changes with time - the older the surface the
+larger of its portion is covered by the biggest craters, because there was enough time for the
+rarely happening big impacts to occur (see Fig.~\ref{fig:r_plot}). Those different crater populations are
+illustrated by an R-plot - a plot of the fraction of the total area of a considered region covered by craters of given diameter. Some guideline ages for the Moon: 
+
+\begin{itemize}
+ \item Late Heavy Bombardment craters 4.6 Gy, 
+ \item Light-toned Terrae (highlands) , plagioclase feldspar 4.5 Gy, 
+ \item Dark-toned Mare, volcanic basalts 3.1-3.8 Gy   
+\end{itemize}
+(Maria have 200 times fewer craters than highlands)
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.9\textwidth]{Figs/sec_3_R-plot.pdf}
+	\caption[impact rate]{The R-plot shows different populations of craters on surfaces of different age}
+	\label{fig:r_plot}
+\end{figure*} 
+
+\begin{equation*}
+R = \frac{ \mbox{Area covered by crates of diameter D }}{  \mbox{Total Area }}
+\end{equation*}
+
+
+%----------------------------------------------------------------------------------------
+%	4 :  Planetarium Visit
+%----------------------------------------------------------------------------------------
+
+\newpage 
+\section{Planetarium Visit}
+
+During our planetarium visit you have encountered several concepts. We used the World Wide Telescope software which can be used for free online at \url{http://www.worldwidetelescope.org/} . For looking at the night sky in terrific detail I also recommend  Stellarium \url{http://www.stellarium.org/}, and for that as well as travel in space (eg. to look at our galaxy from outside, or travel along the space probes, visit the planets) Celestia \url{http://www.shatters.net/celestia/} is an excellent choice. They are all free of charge. 
+
+In the planetarium we firstly  looked at the night sky as seen from Seattle ($\phi$ - latitude - of 47 $\degree$). There you could see the constellations that we can see during the night in the summer - Ursa Major, Lyra, Cygnus, etc. You can find those and many more  with Stellarium or WWT. You can also print the night sky maps for yourself at \url{http://skymaps.com/downloads.html}.  There is also a project \url{http://www.sky-map.org/} worth checking. Similarly, Google came up with another way of looking at the sky : \url{http://www.google.com/sky/}. We particularly noted the Ursa Major - the Big Bear, or specifically a smaller part of it called the Big Dipper. It is useful because extending the end of the Dipper 5 times upward we hit the North Star, which lies in the constellation of Ursa Minor - the Small Bear (see Fig.~\ref{fig:northstar}). 
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_4_north_star.png}
+	\caption[north]{How to find the North Star.}
+	\label{fig:northstar}
+\end{figure*}  
+
+We noted that there are two types of grids important for astronomers : Altitude/Azimuth grid, and the Equatorial grid. As the Earth rotates on its axis, stars appear to rise and set. The only star that stays still is the North Star - Polaris, which is very close to the North Celestial Pole - an extension of the rotation axis of the Earth.  The Alt/Az grid is defined with respect to the observer, and defines circles parallel to the horizon as circles of the same altitude above the horizon. Hence an altitude of $90 \degree$ is directly overhead - in Zenith. The Altitude and Azimuth of most stars changes during the night, hence this system is only useful for  telling someone where the star is at some particular moment in time. It's easy to use, because the altitude is measured from the horizon, and the azimuth 
+is measured from the north point eastward, and the north point is easily found by identifying the location of the North Star (see Fig.~\ref{fig:altaz}).
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_4_alt_az.png}
+	\caption[AltAz]{The horizontal - Alt/Az coordinates.}
+	\label{fig:altaz}
+\end{figure*}  
+
+The Equatorial grid is defined analogously to the Latitude/Longitude grid on the surface of the Earth. It is the projection of that grid onto the sky. The Latitude equivalent is called declination - $\delta$, whereas the longitude equivalent is Right Ascension : $\alpha$.   $\delta$ is measured  north/south from the celestial equator, $\pm 90 \degree$.  $\alpha$ is an angular distance along the celestial equator from the vernal equinox point, which is on of the  two  points where the ecliptic intersects the celestial equator (Fig. ~\ref{fig:radec}). 
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.68\textwidth]{Figs/sec_4_ra_dec.png}
+	\caption[RaDec]{The equatorial coordinates.}
+	\label{fig:radec}
+\end{figure*}  
+
+We saw how the apparent movement of stars is different at different latitudes: the North Star's altitude indicates directly the Latitude. Thus in Seattle the North Star is  $47\degree$ above the horizon, on the Equator : $0 \degree$, and on the North Pole - directly overhead : $90 \degree$.  (see \url{http://cseligman.com/text/sky/motions.htm}). 
+
+We also noted the movement of the planets, in particular focusing on their retrograde motion. Planets do not move within visible timescale - but if you note the position of any planet at several consecutive nights with respect to background stars (i.e. note their $\delta$ and $\alpha$), it will change. It will change faster for the planets that are closer to the Sun  than to those  that are further away.  Some planets would  appear to move backwards, because at those moments the Earth overtakes them on the orbit.  
+
+Looking at the Solar System from above, we noted the presence of smaller bodies such as asteroids and comets in very specific locations - in the Kuiper belt, the Oort Cloud, the Main Asteroid belt, and the Trojan Asteroid groups, leading and trailing the orbit of Jupiter - see Fig.~\ref{fig:solar_system}
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.98\textwidth]{Figs/sec_4_solar_system.jpg}
+	\caption[SolarSystem]{An overview of the Solar System, adapted from \url{http://elements.geoscienceworld.org/}}
+	\label{fig:solar_system}
+\end{figure*}
+
+Finally, we discussed how stars and planets are all formed in stellar nurseries, such as the Orion Nebula (Fig.~\ref{fig:m42}).
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.98\textwidth]{Figs/sec_4_m42.jpg}
+	\caption[stellarnurseries]{An image of the M42 nebula.}
+	\label{fig:m42}
+\end{figure*}
+
+
+%----------------------------------------------------------------------------------------
+%	5 : Plate Tectonics 
+%----------------------------------------------------------------------------------------
+
+\section{Plate Tectonics}
+
+Surface of our planet or a moon is changed by a variety of processes. Apart from impacts, internal heat plays a major role. Several important concepts were discussed in the class. Firstly, one recognizes that geologic activity scales with size, so that the bigger the bod, the longer is the durations of it's geologic activity (see Fig.~\ref{fig:geol_act}).  Thus for instance Mars, which is almost two times smaller than Earth,  was still geologically active even 600 mln years ago, but around that time the internal heat coming from the decay of radioactive elements became insufficient to drive its  volcanism and geologic activity. 
+
+
+\begin{figure*}
+\centering
+	\includegraphics[width=0.88\textwidth]{Figs/sec_5_geol_activity.pdf}
+	\caption[geol_act]{Geologic activity scales with size}
+	\label{fig:geol_act}
+\end{figure*}  
+
+With sufficient internal heat and (as often assumed) presence of liquid water, the crust may become divided into plates, which move around the globe. There are places where a plate is formed : a ridge, and places where a plate sinks under another one  - a subduction zone. Both places would have volcanism present. But there is also a third way to form a volcano - through a hot spot. It forms a shield volcano, by forcing magma under pressure to make a channel through the crust to the surface.    If the crust  overhead is moving (as in the case of plate tectonics), this will form a chain of volcanoes - the plume stays in the same place, but the plate continuously moves.  Several volcanoes in the chain may be active at the same time,  which depends on the size of the hot spot, the thickness of the crust, and the characteristics of the crust, such as local composition, which may help to maintain or close the lava channel which connects the plume with the surface.  
+
+The hot spot volcanism together with plate tectonics implies an age relation for the volcanoes in a chain. Those furthest away from the hot spot would be the oldest. If erosion takes place (as for Hawaii islands), those would also be most eroded, weathered down, sinking under its own weight.  On Mars there is no erosion currently, so the size does not imply age.  If there is no plate tectonics,  then the volcano grows without ceasing, just like Olympus Mons. It may be that Alba Planitia and Olympus Mons are in a chain, but there is not much evidence to support that (and explain why a tectonic plate would be moving so slowly to allow for their almost uninterrupted growth). 
+
+Given that, especially on Mars, there is no clear evidence for plate tectonics, an entirely independent way of measuring the age of any surface is crater counting. However, this is very inaccurate, because for a small number of  craters bigger than 10 km (N(10))   it is hard to tell the age. Accuracy of crater counting is related to the N(10) plot.  If my count for N(10) is  $10 \pm 2$ then it corresponds to the surface of age  $1 \pm 0.5$ bn years. However, if we count N(10) to be $100 \pm 2$, then it corresponds to the age $3.8 \pm 0.05$ bn years  (age determination is read off the N(10) vs age plot for the crater counting lab),  which again shows that it is difficult to accurately determine the age of a young surface. 
+
+Thus a better way is to take samples and radioactively date them. We can also look for stratification of outflows , to find a relative age difference.  
+
+
+%----------------------------------------------------------------------------------------
+%	6 :  Atmospheric Escape
+%----------------------------------------------------------------------------------------
+
+
+\section{Atmospheric Escape}
+
+In the previous section we discussed plate tectonics, which shows how the heat from initial contraction and the ensuing heat of the radioactive decay, provide energy necessary to drive plate tectonics and volcanism. Sometimes water is not present, which results in a lack of plate tectonics, but doesn't stop volcanism - like in a case of Venusian 'blob tectonics'.  
+
+Initially a planet is formed with many gases primordially present in the Solar System, such as Hydrogen and Helium - this is called the Primary Atmosphere. Such atmosphere may be quickly lost if the $v_{escape} > \frac{1}{6} v_{gas}$.   This is true because  $v_{gas}$ - the gas velocity, is linked to temperature, as we can equate  the thermal and kinetic energies of particles: 
+
+\begin{equation}
+k_{b}T = \frac{m v^{2}}{2}
+\end{equation}
+
+where $k_{b}$ is the Boltzmann constant, $T$ is the temperature at that distance from the Sun, $m$ - mass of the gas molecules, and $v$ - velocity of gas particles. 
+
+From that equation  a rearrangement of variables yields:
+
+\begin{equation}
+v_{gas} = \sqrt{\frac{2 k_{b} T}{m}} 
+\end{equation}
+
+and if we express $m$ in  atomic mass units : $1$ amu = $1.66 \cdot 10^{-27}$ $[kg]$, and insert $k_{b}=1.38 \cdot 10^{-23} $ $[m^{2}kgs^{-2}K^{-1}]$ then the constants simplify :
+
+\begin{equation}
+v_{gas} = 157\sqrt{\frac{T}{m}}
+\end{equation}
+
+which is precisely the equation used in the lab. 
+
+This shows us that not all bodies can hold on to all types of atmospheres: the escape velocity of the Earth is  $v_{Earth}=11200$ $[m/s]$, and so we need $v_{gas} < (1/6)  \cdot 11200 $, thus $v_{gas} < 1866 $ $[m/s]$. 
+At the distance of Earth to Sun : $1$ $[AU]$, the temperature is $400  [K]$. Thus  we can calculate:
+
+$v_{Hydrogen} = 157 \sqrt{400/2}= 2220 [m/s]$,  $v_{Water}=157 \sqrt{400/18}=740 [m/s]$, so that we see that Earth could not have an atmosphere of Hydrogen, but can certainly hold on to water (vapour). 
+
+
+
+Apart from primary atmosphere, due to volcanism , and other outgassing, we form a secondary atmosphere, composed of heavier elements. It would contain carbon dioxide ($CO_{2}$), nitrogen ($N_{2}$), etc. 
+Even the secondary atmosphere changes its composition over time due to various atmospheric sinks : one of them we already described in detail: if gas molecules move too fast, they will escape from the gravitational influence of a planet or moon. This is called thermal escape. Another way for the atmosphere molecules to be lost to outer space is by interaction with the solar wind , which is the stream of energetic charged particles flowing outwards from the Sun. We are protected from a lot of this interaction by our magnetosphere, which deflects a lot of the charged particles, but some of them make it all the way to the atmosphere, and being directed by the magnetic field lines of the Earth, they are guided towards the poles, creating aurorae. 
+There are two other atmospheric sinks. One is condensation on the surface, for instance when the temperature is too low the gas freezes - like dry ice caps on Mars. Another is the chemical interaction with the surface materials, which traps certain elements in rocks. Similar to this is the locking of carbon dioxide in skeletons of all the sea creatures, which after they sediment on the bottom of the sea, form layers of limestone. Thus on the global scale of hundreds of millions of years, carbon dioxide level in the Earth's atmosphere will steadily decrease by a combination of all those sinks. Global warming and the current increase of carbon dioxide level is only a short-term aberration from the overall  trend of the decrease of its level. 
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	7  : Final Revision
+%----------------------------------------------------------------------------------------
+
+\section{Final Revision  }
+
+Revision might be made most efficiently with good use of materials and time. Lectures contain the lecture highlights on the first few slides - those are a good guideline for what to revise.  Below are revision questions that may help you prepare for Thursday.
+
+\begin{itemize}
+\item What ages should we expect when describing the Solar System? When was it formed? What are the densities of iron, rock, water ? What is the moment of inertia K? What values would you expect for a differentiated and non-differentiated bodies? 
+\item What is N(10)?   How do we determine absolute ages? Why is it best to take samples? What do we measure in the samples when trying to estimate their age ? 
+\item What is differentiation ?  What K do we expect for the Moon?  What's the original lunar crust made of ? What is the age of highlands  / mare ? What are the 5 stages of planetary evolution? In which stage is currently Mars, in which stage is Earth ?  
+\item  What is accretion? What are dynamic and chemical constraints for the composition of the Moon? What are the various schemes of the formation of the Moon? What does the stability of lunar orbit imply for the formation of life on Earth?  
+\item Explain why geologic activity scales with size. Why does Venus not have plate tectonics? What is blob tectonics? How do we form volcanoes? 
+
+\item What is Secondary Atmosphere ? What does it contain ? What are atmospheric sinks ? 
+
+\end{itemize}
+
+Other questions to consider:
+
+- what is escape velocity?  
+- what is primary  / secondary atmosphere? 
+- what is the evidence for the past presence of water on Mars? 
+- what is the age of the Martian surface?
+- what is the age of Venus surface? 
+- what does the presence of Olivine on some places on the surface of Mars indicate concerning the duration of the presence of water ?  
+- why do we often  land close to craters?
+- why did Phoenix land close to the pole? 
+-  what is impact breccia?
+- what is the evidence for the K-T event ? 
+- what caused the extinction of dinosaurs? what was the role of the atmosphere ? 
+
+
+%----------------------------------------------------------------------------------------
+%	8  : Final Revision II
+%----------------------------------------------------------------------------------------
+
+\section{Section 9: Final Revision II }
+
+
+\begin{itemize}
+\item (Wk 6)   What   are chondrites?  Are they differentiated or undifferentiated ? What is the rarest type of a chondrite 
+\item What are achondrites?  What types of bodies do they come from  ? 
+
+\item How  likely are you to find a stony-iron meteorite   on Earth ? Where do they come from in their parent body ? 
+
+\item what are Iron meteorites?  Where in their parent body do they come from ? How old would you expect one to be ? 
+
+\item Asteroids - What are their characteristics? sizes - shapes - compositions surface characteristics	
+\item What is the origin of the Asteroid Belt?  What is the density of the Asteroid Belt? What are Trojan Asteroids?
+What are the Kirkwood Gaps?
+\item Physical Structure - Where are the asteroids? Why are Resonances important?
+\item Chemical Structure - Composition vs. Distance.
+
+
+\item (wk 7)  Outer Moons I - Rings and Dead Worlds  : What are the types/characteristics of giant planet satellites? What's characteristic about regular vs irregular satellites?  
+\item What is the Roche Limit of a Planet? 
+\item Dead Worlds - Callisto, etc  - How are their surfaces similar/different from the Earth's Moon?
+
+
+\item Outer Worlds II - Recently and Currently Active Worlds : Recently Active Worlds - Ganymede, etc.
+Why are outer worlds geologically active longer than similarly sized inner worlds ? 
+
+\item Titan: Why is Titan's secondary atmosphere different from the secondary atmospheres of the inner worlds?
+\item Why must Titan's atmosphere be constantly replenished? 
+
+\item (wk8)   Outer Worlds III - Active Worlds:  Io (J),  Europa (J),  Enceladus (S) , Triton (N) - Why are they so geologically active?
+\item   How are Io's volcanoes similar/different from volcanoes elsewhere in the Solar system?
+\item Why might Europa be an interesting place to look for life?
+\item What processes have modified the surface of Triton?
+
+\item Outer Worlds IV - The Icy Dwarfs Pluto - The Kuiper Belt - Comets : Pluto -  What is its orbit like?
+Why all the controversy about its status?
+\item  How did the Kuiper Belt form? What is its relation to Pluto and Triton? What is its relation to comets?
+
+\end{itemize}
+
+Other questions to consider:
+
+- what is reflectance? how could it help us learn something about the surface measured ? 
+- what does accretion time depend on ? 
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
